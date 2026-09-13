@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+/* Tokens ported 1:1 from the Figma Make template (src/index.css). */
+@theme {
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  --color-background: #050505;
+  --color-surface: #0d0d0f;
+  --color-card: #151519;
+  --color-card-hover: #1a1a22;
+  --color-primary: #00a8ff;
+  --color-primary-deep: #0066ff;
+
+  --color-ink: #ffffff;
+  --color-ink-soft: #d0d0e0;
+  --color-ink-muted: #8b8b9e;
+  --color-ink-subtle: #5a5a72;
+  --color-ink-faint: #3a3a52;
+
+  --animate-fade-in: fadeIn 0.5s ease forwards;
+  --animate-fade-in-up: fadeInUp 0.6s ease forwards;
+  --animate-orb-pulse: orb-pulse 3s ease-in-out infinite;
+  --animate-orb-inner: orb-inner 2s ease-in-out infinite;
+  --animate-typing-dot: typing-dot 1.4s ease infinite;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* In the base layer so `outline-none` on fields with their own focus styling (e.g. the landing textarea) can override it. */
+@layer base {
+  :focus-visible {
+    outline: 1px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+::selection {
+  background: rgba(0, 168, 255, 0.2);
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orb-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 0.9; }
+}
+
+@keyframes orb-inner {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Staggered entrance: elements start hidden and animate in. */
+.animate-fade-in,
+.animate-fade-in-up {
+  opacity: 0;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #00a8ff, #0066ff);
+  border-radius: 999px;
+  box-shadow: 0 0 8px rgba(0, 168, 255, 0.4);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--color-surface);
+  color: var(--color-ink-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  border-color: rgba(0, 168, 255, 0.3);
+  color: #fff;
+}
+
+.chip.active {
+  border-color: rgba(0, 168, 255, 0.5);
+  background: rgba(0, 168, 255, 0.1);
+  color: var(--color-primary);
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 450;
+  color: var(--color-ink-subtle);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Range input used by the check-in sliders. */
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+}
+.range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--color-primary);
+  box-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
+}
