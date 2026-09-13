@@ -1,0 +1,312 @@
+src/server/http.ts
+  s_609ecddf4bf2b4::t_d45207486e2c08 2-15
+  s_609ecddf4bf2b4::t_e2fc59b34acd09 1
+  s_609ecddf4bf2b4::t_f50a5c3a390666 16-18
+  s_609ecddf4bf2b4::t_f5186cd012c64f 19-40
+src/app/api/check-ins/route.ts
+  s_f652fd1cdf1974::t_f26ac968405cee 5,7
+  s_f652fd1cdf1974::t_cf7bd721323936 6
+  s_f652fd1cdf1974::t_ecd910117c4ccb 1-4,8-11
+src/app/login/page.tsx
+  s_609ecddf4bf2b4::t_6bad05a7a63c00 1-157
+specs/data-model.md
+  s_f652fd1cdf1974::t_87ced361ea0dcb 178
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 176
+  s_f652fd1cdf1974::t_c4571cd95c289e 1-175,177,179-182
+src/server/errors.ts
+  s_609ecddf4bf2b4::t_b9bd1f95f7067a 1-5
+  s_609ecddf4bf2b4::t_16251980a3bd75 6-8
+  s_609ecddf4bf2b4::t_300c99fe3e737e 9-23
+src/app/auth/confirm/route.ts
+  s_609ecddf4bf2b4::t_711c7357032deb 1-32
+src/domain/types.ts
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 57
+  s_f652fd1cdf1974::t_82db0557a4a277 1-56,58-179
+src/server/ai/mock.ts
+  s_f652fd1cdf1974::t_39268bac623d5f 241
+  s_f652fd1cdf1974::t_c46a040cf642ff 109-168
+  s_f652fd1cdf1974::t_5b23a67fdb2f3f 1-9
+  s_f652fd1cdf1974::t_4963781bd8092c 20,35,42,44,65-66,85-86,173-174,233-234,256-292
+  s_f652fd1cdf1974::t_4afdedf42db422 88
+  s_f652fd1cdf1974::t_0b7869b7c8dbe6 176-177
+  s_f652fd1cdf1974::t_860946a77c48f1 236-239
+  s_f652fd1cdf1974::t_598c614c6f7b5f 10-19,21-34,36-41,43,45-64,67-84,87,89-108,169-172,175,178-232,235,240,242-255
+src/app/api/conversations/route.ts
+  s_f652fd1cdf1974::t_f26ac968405cee 5-7
+  s_f652fd1cdf1974::t_7ff83bbd1cd467 1-4,8-11
+src/domain/rules.ts
+  s_f652fd1cdf1974::t_c72d5e0175b82c 7-16,19,21,24,28,33,38,42,49
+  s_f652fd1cdf1974::t_5f1135e347b691 4-6
+  s_f652fd1cdf1974::t_e38e69eec8fda9 17-18
+  s_f652fd1cdf1974::t_42d8a371c024cb 20
+  s_f652fd1cdf1974::t_eb99198728e2bb 22-23
+  s_f652fd1cdf1974::t_f6f0921aa9825e 25-27
+  s_f652fd1cdf1974::t_228c41fc0da289 29-32
+  s_f652fd1cdf1974::t_bd229c9075bc68 34-37
+  s_f652fd1cdf1974::t_1b0627061863cb 39-41
+  s_f652fd1cdf1974::t_a6d91b60d6f768 43-48
+  s_609ecddf4bf2b4::t_4a42ca9f890208 1-3
+specs/architecture.md
+  s_f652fd1cdf1974::t_e3038be5ef1ff1 68-80
+  s_f652fd1cdf1974::t_6a2190b2d8b2c0 65-67
+  s_f652fd1cdf1974::t_9cd13baed44461 81-83
+  s_609ecddf4bf2b4::t_530ca727389442 1-64,84-134
+src/app/paths/page.tsx
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 56
+  s_f652fd1cdf1974::t_6d345cfb73f74e 1-55,57-79
+src/components/Nav.tsx
+  s_609ecddf4bf2b4::t_35a1d33c1c5bc4 5
+  s_609ecddf4bf2b4::t_7950e5c1cbae99 20,22-61,63,71,90-91,101-102,117-118
+  s_609ecddf4bf2b4::t_d582ce31194931 105-114
+  s_609ecddf4bf2b4::t_a9eefe72d9f7ff 2-4
+  s_609ecddf4bf2b4::t_73150b0f7731fb 6-8,17-19
+  s_609ecddf4bf2b4::t_4487ef08a9df90 21
+  s_609ecddf4bf2b4::t_46dce2a0ac749b 62
+  s_609ecddf4bf2b4::t_3577c66171f99f 64-66,68-70
+  s_609ecddf4bf2b4::t_28eba51b16d709 72-74,87-89
+  s_609ecddf4bf2b4::t_663e9aaf26a34a 92-94,98-100
+  s_609ecddf4bf2b4::t_27b1295f7d0278 103-104
+  s_609ecddf4bf2b4::t_644dc010cfd88e 115-116
+  s_609ecddf4bf2b4::t_1a1e563c0b4c0d 1,9-16,67,75-86,95-97
+src/components/paths.tsx
+  s_f652fd1cdf1974::t_53edaa4736c29d 59-68,125
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 9-24,85,143
+  s_f652fd1cdf1974::t_849158fb407ab2 57,70-78
+  s_f652fd1cdf1974::t_da966c66c413e6 1-8,25-56,58,69,79-84,86-124,126-142,144-145
+package.json
+  s_609ecddf4bf2b4::t_2f57a100255e62 13-14
+  s_609ecddf4bf2b4::t_97908859192368 1-12,15-29
+src/server/ai/prompts.ts
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 77,79,91,99
+  s_f652fd1cdf1974::t_468e973478a729 1-76,78,80-86,88-90,92-94,97-98,100-104,106-124,127-186
+  s_f652fd1cdf1974::t_9fee11fa2f9ed7 87,95-96,105,125-126
+src/app/globals.css
+  s_f652fd1cdf1974::t_0068a0eacb1137 58-63,101
+  s_f652fd1cdf1974::t_ce310277852fe3 55-57
+  s_f652fd1cdf1974::t_78c071ceb21d02 64-66,98-100
+  s_f652fd1cdf1974::t_21ff66945f65d9 102-104
+  s_609ecddf4bf2b4::t_38a8bf9f8a8115 1-54,67-97,105-187
+src/app/api/paths/[id]/select/route.ts
+  s_f652fd1cdf1974::t_f26ac968405cee 4-6
+  s_f652fd1cdf1974::t_33a68cd5a68ee0 1-3,7
+src/app/page.tsx
+  s_609ecddf4bf2b4::t_deaf7e6b349934 7-36
+  s_609ecddf4bf2b4::t_941c60eb49fadd 1-6,37-126
+src/app/layout.tsx
+  s_609ecddf4bf2b4::t_abf079c139e6d8 4-5
+  s_609ecddf4bf2b4::t_8bef62e0db5fbc 16-28,33
+  s_609ecddf4bf2b4::t_57210a2ca7fabb 1-3
+  s_609ecddf4bf2b4::t_c54cd5ff17612a 6-8,13-15
+  s_609ecddf4bf2b4::t_46b3c01aeefcce 29-32
+  s_609ecddf4bf2b4::t_175754ca71386e 9-12
+src/lib/api.ts
+  s_609ecddf4bf2b4::t_73a2eec706ef66 22,35,37-41,44
+  s_609ecddf4bf2b4::t_40823e0bc631cc 19-21
+  s_609ecddf4bf2b4::t_befd2cf151a8eb 23-25,32-34
+  s_609ecddf4bf2b4::t_3b32c12eae0335 36
+  s_609ecddf4bf2b4::t_6efa2121f09b10 42-43
+  s_609ecddf4bf2b4::t_cb7b12efc85fba 45-47
+  s_609ecddf4bf2b4::t_7311ca2e7cb2eb 1-18,26-31,48-73
+src/server/ai/service.ts
+  s_f652fd1cdf1974::t_7babdeb4606b0c 4-56
+  s_f652fd1cdf1974::t_6326cfedd66bfc 1-3
+  s_f652fd1cdf1974::t_197dd244b9a689 57-59
+  s_609ecddf4bf2b4::t_d12ba6c71430fa 60
+src/lib/supabase/config.ts
+  s_609ecddf4bf2b4::t_4dce20d317022d 1-11
+src/proxy.ts
+  s_609ecddf4bf2b4::t_5d3d737fa32258 1-54
+src/app/api/conversations/[id]/complete/route.ts
+  s_f652fd1cdf1974::t_f26ac968405cee 4-6
+  s_f652fd1cdf1974::t_d2188580d18dea 1-3,7
+src/app/api/conversations/[id]/messages/route.ts
+  s_f652fd1cdf1974::t_f26ac968405cee 5-7
+  s_f652fd1cdf1974::t_7f74732b63a905 1-4,8-11
+src/server/repo/memory.ts
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 146
+  s_f652fd1cdf1974::t_070e3ed375da01 1-145,147-314
+src/server/services/flow.test.ts
+  s_f652fd1cdf1974::t_918465523f0d6a 68,73-74,76-90,101,114,119-121,123,130,133,135-136,141,146,148,151,153-154,159,170
+  s_f652fd1cdf1974::t_b31501aa143b22 122
+  s_f652fd1cdf1974::t_721507b0daa0b1 65-67
+  s_f652fd1cdf1974::t_9b2bb6d821e24b 69-72
+  s_f652fd1cdf1974::t_12225a6507ff18 75
+  s_f652fd1cdf1974::t_bed8f65af8032c 91-93,98-100
+  s_f652fd1cdf1974::t_4394806c2b08d0 102-104,111-113
+  s_f652fd1cdf1974::t_072f233068ac98 115-118
+  s_f652fd1cdf1974::t_ee75d52a3520f1 124-129
+  s_f652fd1cdf1974::t_928e339ec852ff 131-132
+  s_f652fd1cdf1974::t_4e9ac32c89c1ef 134
+  s_f652fd1cdf1974::t_c42c341d5ff951 137-140
+  s_f652fd1cdf1974::t_11f7a6a9ce773a 142-145
+  s_f652fd1cdf1974::t_eebd4aa9fa04ed 147
+  s_f652fd1cdf1974::t_da5b572b0aa0b2 149-150
+  s_f652fd1cdf1974::t_0d5cbd2ac4920b 152
+  s_f652fd1cdf1974::t_6a936d3de23060 155-158
+  s_f652fd1cdf1974::t_9a64726a7ac7f4 160-162,167-169
+  s_f652fd1cdf1974::t_f007f142d6437f 171
+  s_609ecddf4bf2b4::t_575dfba6f00dcb 1-64,94-97,105-110,163-166
+src/app/paths/[id]/page.tsx
+  s_f652fd1cdf1974::t_849158fb407ab2 116-209,227
+  s_f652fd1cdf1974::t_ddb877ca486a48 1-115,210-226,228-232
+src/server/repo/supabase.ts
+  s_f652fd1cdf1974::t_4ef610a4945d76 38-40,42
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 153
+  s_609ecddf4bf2b4::t_d87c6fa882f3c6 1-37,41,43-61,63-110,112-122,124-152,154-196,198-394,396
+  s_609ecddf4bf2b4::t_333fa66f5ebc7e 62,111,123,197,395
+src/server/context.ts
+  s_f652fd1cdf1974::t_53edaa4736c29d 26,58-63,65-66
+  s_609ecddf4bf2b4::t_d26aad1c7a39a5 1-4,10-25,27,64,67-98
+  s_f652fd1cdf1974::t_c1b15a1ca36c89 5-9
+  s_f652fd1cdf1974::t_4a4f391440c347 28-57
+src/app/explore/page.tsx
+  s_609ecddf4bf2b4::t_deaf7e6b349934 10-36
+  s_609ecddf4bf2b4::t_12dd0dec4aa2dc 1-9,37-201
+src/lib/supabase/browser.ts
+  s_609ecddf4bf2b4::t_0cdd5bd388e6ec 1-9
+src/domain/schemas.ts
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 55-58,74
+  s_f652fd1cdf1974::t_9818e21cfce978 3,6,9-38,62-73,91-117,154-155,162,164,166
+  s_f652fd1cdf1974::t_eeeeed0658d865 48,59,77,118,124,143,146-153,156-161,163,165,167-173
+  s_f652fd1cdf1974::t_7fc35525dcd580 1-2,4-5,7-8,39-47,49-54,60-61,75-76,78-90,119-123,125-142,144-145,174-176
+src/lib/safe-redirect.ts
+  s_609ecddf4bf2b4::t_2cc4cd44ba9004 1-5
+src/app/auth/sign-out/route.ts
+  s_609ecddf4bf2b4::t_09290cc9179225 1-12
+src/lib/session.ts
+  s_609ecddf4bf2b4::t_495fcf16c79845 1-27
+src/server/ai/types.ts
+  s_f652fd1cdf1974::t_e5813843091f93 1-28,30-41,47
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 29
+  s_f652fd1cdf1974::t_c98545a2840145 42-46
+src/server/ai/client.ts
+  s_f652fd1cdf1974::t_68a46c306def2a 37-53,59
+  s_f652fd1cdf1974::t_e35e675f22036f 1-36,54-58,60-124
+src/server/services/exploration.ts
+  s_f652fd1cdf1974::t_9724f197e5d45f 1
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 90
+  s_f652fd1cdf1974::t_c90cb0819c54e1 26
+  s_f652fd1cdf1974::t_ed7f2d869f1588 59-63
+  s_f652fd1cdf1974::t_043fe2f1db543a 2-25,27-58,64-89,91-126
+src/server/services/direction.ts
+  s_f652fd1cdf1974::t_b4f8f341c1dbf2 117-149,189
+  s_f652fd1cdf1974::t_04d77982b05f45 65
+  s_f652fd1cdf1974::t_c4a7255c2e6e72 62-64
+  s_f652fd1cdf1974::t_88a92a70c5f6f4 66-68,114-116
+  s_f652fd1cdf1974::t_3bd0013fbfe193 150-152,186-188
+  s_f652fd1cdf1974::t_ab30552c034cbc 190-192
+  s_609ecddf4bf2b4::t_fd452df213accf 1-61,69-113,153-185,193-221
+src/app/api/check-ins/[id]/analyze/route.ts
+  s_f652fd1cdf1974::t_cf7bd721323936 5
+  s_f652fd1cdf1974::t_f26ac968405cee 4,6
+  s_f652fd1cdf1974::t_71736997f5b6b0 1-3,7
+.env.example
+  s_f652fd1cdf1974::t_d2cd0e3518481a 1-19
+  s_f652fd1cdf1974::t_f4553eed94e15e 20-22
+  s_609ecddf4bf2b4::t_b758e23ed4a615 23
+src/server/ai/openai.ts
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 83,87
+  s_f652fd1cdf1974::t_79095e95ddae38 1-82,84-86,88-141
+src/server/ai/openai.test.ts
+  s_f652fd1cdf1974::t_89802013c1841e 1-50,53-71,73-108,110-161,163-186
+  s_f652fd1cdf1974::t_3224ab4e5c53fa 51-52
+  s_f652fd1cdf1974::t_7d3f4ac53b24d2 72,109,162
+src/lib/supabase/server.ts
+  s_609ecddf4bf2b4::t_74e7831eef197e 1-24
+.gitignore
+  s_f652fd1cdf1974::t_68fdf69da4e20e 1-7
+package-lock.json
+  s_609ecddf4bf2b4::t_3d4cab2155379d 1-2983
+supabase/migrations/20260913022433_init.sql
+  s_f652fd1cdf1974::t_311b73969eb4ee 1-285
+.mcp.json
+  s_609ecddf4bf2b4::t_c2b5cd85945e2d 1-8
+CLAUDE.md
+  s_609ecddf4bf2b4::t_301e483a4b689f 1-154
+next.config.ts
+  s_609ecddf4bf2b4::t_e2083a245d932a 1-5
+postcss.config.mjs
+  s_609ecddf4bf2b4::t_761f85b0ed926a 1-3
+specs/analytics.md
+  s_609ecddf4bf2b4::t_c589a51843ed22 1-43
+specs/check-ins.md
+  s_609ecddf4bf2b4::t_e65910d7a11df6 1-63
+specs/dashboard.md
+  s_609ecddf4bf2b4::t_de18fd4f0b9178 1-48
+specs/onboarding.md
+  s_609ecddf4bf2b4::t_ed6fbb8e66c1da 1-73
+specs/path-and-roadmap.md
+  s_609ecddf4bf2b4::t_74eae4c724b085 1-71
+specs/product.md
+  s_609ecddf4bf2b4::t_30a86f8ccad1fe 1-84
+specs/recommendations.md
+  s_609ecddf4bf2b4::t_a1dc615138ef7b 1-79
+src/app/analysis/page.tsx
+  s_609ecddf4bf2b4::t_235b14d39fa984 1-161
+src/app/api/conversations/latest/route.ts
+  s_609ecddf4bf2b4::t_dc5da83d78d8f8 1-4
+src/app/api/dashboard/route.ts
+  s_609ecddf4bf2b4::t_2adcd987037270 1-4
+src/app/api/direction-updates/latest/route.ts
+  s_609ecddf4bf2b4::t_a90a44c2ccc4ff 1-4
+src/app/api/events/route.ts
+  s_609ecddf4bf2b4::t_0aa360642003d3 1-11
+src/app/api/paths/[id]/route.ts
+  s_609ecddf4bf2b4::t_c216ad7de23720 1-4
+src/app/api/paths/route.ts
+  s_609ecddf4bf2b4::t_2ab97ffe6d8d86 1-4
+src/app/api/tasks/[id]/route.ts
+  s_609ecddf4bf2b4::t_2d9e0e4ed0d760 1-8
+src/app/check-in/page.tsx
+  s_609ecddf4bf2b4::t_9dd15d30397af5 1-267
+src/app/dashboard/page.tsx
+  s_609ecddf4bf2b4::t_f8414f00dc5397 1-290
+src/app/direction-update/page.tsx
+  s_609ecddf4bf2b4::t_8b357b12474255 1-156
+src/components/chat.tsx
+  s_609ecddf4bf2b4::t_fe06255b56615a 1-40
+src/components/ui/icons.tsx
+  s_609ecddf4bf2b4::t_76ea17ebdcd6bc 1-38
+src/components/ui/primitives.tsx
+  s_609ecddf4bf2b4::t_3c1b2caa2ccc3d 1-177
+src/components/ui/states.tsx
+  s_609ecddf4bf2b4::t_822d86f522d450 1-79
+src/domain/rules.test.ts
+  s_609ecddf4bf2b4::t_ab8e06bddbc1d9 1-22
+src/lib/use-resource.ts
+  s_609ecddf4bf2b4::t_ae44fa73199953 1-35
+src/server/analytics.ts
+  s_609ecddf4bf2b4::t_2b86d274f5610c 1-31
+src/server/repo/types.ts
+  s_609ecddf4bf2b4::t_744cb060cd201b 1-83
+src/server/services/shared.ts
+  s_609ecddf4bf2b4::t_22cce202bba536 1-26
+tsconfig.json
+  s_609ecddf4bf2b4::t_063bed9a1b1d10 1-41
+vitest.config.mts
+  s_609ecddf4bf2b4::t_cb73670d7c5bab 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "209eb0276ee3999745e9a2abe1924f219a6fd7b4",
+  "prompts": {},
+  "sessions": {
+    "s_609ecddf4bf2b4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "59a0f682-4885-49bd-895a-36e464c74eec",
+        "model": "claude-opus-5"
+      },
+      "human_author": "AMohamedd74 <ahmed_mohamed14@icloud.com>"
+    },
+    "s_f652fd1cdf1974": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2a264aee-9842-483c-8d71-e3d38b92499f",
+        "model": "claude-opus-5"
+      },
+      "human_author": "AMohamedd74 <ahmed_mohamed14@icloud.com>"
+    }
+  }
+}
