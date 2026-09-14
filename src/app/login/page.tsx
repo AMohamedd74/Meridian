@@ -109,7 +109,7 @@ function Login() {
                   onFocus={() => setFocused(true)}
                   onBlur={() => setFocused(false)}
                   placeholder="you@example.com"
-                  className="w-full bg-transparent px-5 pt-5 pb-3 text-[15px] text-white caret-primary outline-none placeholder:text-ink-subtle focus-visible:outline-none"
+                  className="w-full rounded-t-[15px] bg-transparent px-5 pt-5 pb-3 text-[15px] text-white caret-primary outline-none placeholder:text-ink-subtle focus-visible:outline-none"
                 />
                 <div className="flex items-center justify-end px-4 pt-1 pb-4">
                   <button

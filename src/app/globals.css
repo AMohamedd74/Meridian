@@ -30,6 +30,26 @@
 
 html {
   scroll-behavior: smooth;
+  /* Browser-drawn UI (autofill suggestions, scrollbars, native controls) matches the dark design. */
+  color-scheme: dark;
+}
+
+/*
+ * Saved-email/password autofill (Chrome, Safari, Apple/Google suggestions) paints a light
+ * background that CSS can't override directly. An inset shadow in the surface colour covers it.
+ * The shadow follows the field's own border-radius, so a field flush against a rounded container
+ * needs matching corners (see the login email input) or it squares off the container's edges.
+ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-ink);
+  caret-color: var(--color-primary);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset;
+  box-shadow: 0 0 0 1000px var(--color-surface) inset;
+  transition: background-color 99999s ease-out 0s;
 }
 
 body {
