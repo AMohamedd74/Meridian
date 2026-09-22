@@ -1,0 +1,24 @@
+src/app/dashboard/page.tsx
+  s_f652fd1cdf1974::t_683fdfef11a5f4 5,9-10
+  s_f652fd1cdf1974::t_29900eaa96b7b7 26-32
+src/app/paths/[id]/page.tsx
+  s_f652fd1cdf1974::t_2ddd81968ed3f0 6,19,71-77,98-102,224-234,236-248
+src/components/tasks.tsx
+  s_f652fd1cdf1974::t_742aed06ca6153 1-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "85bbdf188f5da5e9efd7e51d8b1f751ea3d91cef",
+  "prompts": {},
+  "sessions": {
+    "s_f652fd1cdf1974": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2a264aee-9842-483c-8d71-e3d38b92499f",
+        "model": "claude-opus-5"
+      },
+      "human_author": "AMohamedd74 <ahmed_mohamed14@icloud.com>"
+    }
+  }
+}
