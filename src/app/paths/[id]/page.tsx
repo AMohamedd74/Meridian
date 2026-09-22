@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useState, type ReactNode } from "react";
+import { TaskList, useTaskToggle } from "@/components/tasks";
 import { ClockIcon } from "@/components/ui/icons";
 import {
   CheckBullet,
@@ -15,7 +16,7 @@ import {
   Tag,
 } from "@/components/ui/primitives";
 import { ErrorState, LoadingScreen } from "@/components/ui/states";
-import { taskProgress } from "@/domain/rules";
+import { daysRemaining, taskProgress } from "@/domain/rules";
 import type { PathDetailView } from "@/domain/types";
 import { api, errorMessage } from "@/lib/api";
 import { useResource } from "@/lib/use-resource";
@@ -67,6 +68,13 @@ export default function PathDetailPage() {
   const detail = useResource(() => api.path(id), [id]);
   const [selecting, setSelecting] = useState(false);
   const [selectError, setSelectError] = useState<string | null>(null);
+  const { toggle, error: taskError } = useTaskToggle((taskId, completed) =>
+    detail.setData((d) =>
+      d.current
+        ? { ...d, current: { ...d.current, tasks: d.current.tasks.map((t) => (t.id === taskId ? { ...t, completed } : t)) } }
+        : d,
+    ),
+  );
 
   if (detail.status === "loading") return <LoadingScreen label="Loading direction" />;
   if (detail.status === "error") {
@@ -87,6 +95,11 @@ export default function PathDetailPage() {
 
   const { path, current } = detail.data;
   const active = path.user_path?.status === "active";
+  // An experiment is finished by reflecting on it in a check-in: once tasks are done or time is up.
+  const canReflect =
+    current !== null &&
+    (current.tasks.every((t) => t.completed) ||
+      daysRemaining(current.experiment.started_at, current.experiment.duration_days) === 0);
 
   const select = async () => {
     setSelecting(true);
@@ -208,8 +221,31 @@ export default function PathDetailPage() {
             </p>
           )}
 
+          {active && current && current.tasks.length > 0 && (
+            <div className="mb-6">
+              <TaskList tasks={current.tasks} onToggle={(t) => void toggle(t)} showDescriptions />
+              {taskError && (
+                <p className="mt-3 text-xs text-ink-muted" role="alert">
+                  {taskError}
+                </p>
+              )}
+            </div>
+          )}
+
           {active ? (
-            <PrimaryLink href="/dashboard">Go to your dashboard →</PrimaryLink>
+            <>
+              <PrimaryLink href={canReflect ? "/check-in" : "/dashboard"}>
+                {canReflect ? "Reflect on this experiment →" : "Go to your dashboard →"}
+              </PrimaryLink>
+              <p className="mt-3 text-center text-xs">
+                <Link
+                  href={canReflect ? "/dashboard" : "/check-in"}
+                  className="text-ink-subtle transition-colors hover:text-white"
+                >
+                  {canReflect ? "Back to dashboard" : "Ready to reflect? Check in →"}
+                </Link>
+              </p>
+            </>
           ) : (
             <>
               <PrimaryButton onClick={() => void select()} disabled={selecting} aria-busy={selecting}>

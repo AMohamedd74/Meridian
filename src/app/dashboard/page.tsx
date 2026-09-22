@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { CheckIcon } from "@/components/ui/icons";
+import { TaskList, useTaskToggle } from "@/components/tasks";
 import { AIDot, Card, PageShell, PrimaryLink, ProgressLine, SectionLabel } from "@/components/ui/primitives";
 import { EmptyState, ErrorState, LoadingScreen } from "@/components/ui/states";
 import { daysRemaining, explorationLabel, taskProgress } from "@/domain/rules";
-import type { DashboardView, ExperimentTask } from "@/domain/types";
-import { api, errorMessage } from "@/lib/api";
+import type { DashboardView } from "@/domain/types";
+import { api } from "@/lib/api";
 import { useResource } from "@/lib/use-resource";
 
 function useGreeting() {
@@ -19,50 +19,17 @@ function useGreeting() {
   return greeting;
 }
 
-function TaskList({
-  tasks,
-  onToggle,
-}: {
-  tasks: ExperimentTask[];
-  onToggle: (task: ExperimentTask) => void;
-}) {
-  return (
-    <ul className="flex flex-col gap-3">
-      {tasks.map((task) => (
-        <li key={task.id}>
-          <button
-            role="checkbox"
-            aria-checked={task.completed}
-            onClick={() => onToggle(task)}
-            className="group flex w-full items-center gap-3 text-left"
-          >
-            <span
-              className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded transition-all duration-200 group-hover:border-primary/40"
-              style={{
-                background: task.completed ? "rgba(0,168,255,0.15)" : "transparent",
-                border: task.completed ? "1px solid rgba(0,168,255,0.3)" : "1px solid rgba(255,255,255,0.12)",
-              }}
-            >
-              {task.completed && <CheckIcon />}
-            </span>
-            <span
-              className="text-sm transition-colors"
-              style={{ color: task.completed ? "#5A5A72" : "#D0D0E0", textDecoration: task.completed ? "line-through" : "none" }}
-            >
-              {task.title}
-            </span>
-          </button>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 const CONTINUE_LABEL = { definitely: "Definitely", maybe: "Maybe", probably_not: "Probably not" } as const;
 
 function Dashboard({ data, setData }: { data: DashboardView; setData: (u: (d: DashboardView) => DashboardView) => void }) {
   const greeting = useGreeting();
-  const [taskError, setTaskError] = useState<string | null>(null);
+  const { toggle, error: taskError } = useTaskToggle((id, completed) =>
+    setData((d) =>
+      d.current
+        ? { ...d, current: { ...d.current, tasks: d.current.tasks.map((t) => (t.id === id ? { ...t, completed } : t)) } }
+        : d,
+    ),
+  );
   const { path, user_path, roadmap, current, insights, latest_check_in } = data;
   if (!path || !user_path) return null;
 
@@ -72,24 +39,6 @@ function Dashboard({ data, setData }: { data: DashboardView; setData: (u: (d: Da
   const highlighted = insights.find((i) => i.headline);
   const learned = insights.filter((i) => !i.headline).slice(0, 4);
   const allDone = current !== null && current.tasks.every((t) => t.completed);
-
-  const patchTask = (id: string, completed: boolean) =>
-    setData((d) =>
-      d.current
-        ? { ...d, current: { ...d.current, tasks: d.current.tasks.map((t) => (t.id === id ? { ...t, completed } : t)) } }
-        : d,
-    );
-
-  const toggle = async (task: ExperimentTask) => {
-    setTaskError(null);
-    patchTask(task.id, !task.completed);
-    try {
-      await api.setTask(task.id, !task.completed);
-    } catch (e) {
-      patchTask(task.id, task.completed);
-      setTaskError(errorMessage(e));
-    }
-  };
 
   return (
     <PageShell>
