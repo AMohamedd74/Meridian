@@ -1,4 +1,4 @@
--- Meridian MVP schema. Mirrors specs/data-model.md.
+-- PathPal MVP schema. Mirrors specs/data-model.md.
 -- Every user-owned table has Row Level Security. Rows are only visible to and
 -- writable by their owner, and child rows may only reference parents the same
 -- user owns.

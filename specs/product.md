@@ -2,7 +2,7 @@
 
 ## 1. Product vision
 
-Purpose helps people who have multiple possible directions but struggle to decide what to pursue.
+PathPal helps people who have multiple possible directions but struggle to decide what to pursue.
 
 The product does not promise to find one perfect answer.
 

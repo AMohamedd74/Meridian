@@ -1,8 +1,8 @@
-# Purpose App — Claude Code Instructions
+# PathPal App — Claude Code Instructions
 
 ## Product
 
-Purpose is an AI-powered life and career direction application for people who feel stuck, overwhelmed, or uncertain about what to do next.
+PathPal is an AI-powered life and career direction application for people who feel stuck, overwhelmed, or uncertain about what to do next. Its AI coach is called Meridian.
 
 The product helps users:
 1. Tell their story through an adaptive AI conversation.

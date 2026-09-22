@@ -8,7 +8,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Meridian — Find a direction worth testing",
+  title: "PathPal — Find a direction worth testing",
   description:
     "Have a conversation about your life, interests and ambitions, explore three possible directions, and test one in the real world.",
 };

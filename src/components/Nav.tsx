@@ -65,11 +65,11 @@ export default function Nav({ email, authEnabled }: { email: string | null; auth
       className="fixed top-0 right-0 left-0 z-50 flex h-14 items-center justify-between gap-4 border-b border-white/6 bg-background/80 px-5 backdrop-blur-md sm:px-8"
       aria-label="Main navigation"
     >
-      <Link href="/" className="flex flex-shrink-0 select-none items-center gap-2" aria-label="Meridian home">
+      <Link href="/" className="flex flex-shrink-0 select-none items-center gap-2" aria-label="PathPal home">
         <div className="flex h-6 w-6 items-center justify-center rounded-md border border-primary/30 bg-primary/15">
           <div className="h-2 w-2 rounded-full bg-primary" />
         </div>
-        <span className="text-sm font-semibold tracking-tight text-white">Meridian</span>
+        <span className="text-sm font-semibold tracking-tight text-white">PathPal</span>
       </Link>
 
       {mode === "app" && (

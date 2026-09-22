@@ -2,7 +2,7 @@
  * Carries the landing-page opening message into the conversation. Uses
  * localStorage so it survives the magic-link sign-in, which may open in a new tab.
  */
-const OPENING_KEY = "meridian:opening";
+const OPENING_KEY = "pathpal:opening";
 
 export const pendingOpening = {
   get(): string | null {

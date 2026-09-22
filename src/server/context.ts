@@ -23,7 +23,7 @@ export interface RequestContext {
 }
 
 /** Process-wide singletons. Stored on globalThis so dev hot-reloads keep them. */
-const globals = globalThis as unknown as { __meridianMemoryRepo?: Repository };
+const globals = globalThis as unknown as { __pathpalMemoryRepo?: Repository };
 
 /**
  * AI_PROVIDER=openai|mock. Defaults to OpenAI when a key is present. The mock
@@ -82,10 +82,10 @@ export async function getRequestContext(): Promise<RequestContext> {
   if (process.env.NODE_ENV === "production") {
     throw new Error("Supabase is not configured. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.");
   }
-  return { userId: await getLocalDevUserId(), ctx: { repo: (globals.__meridianMemoryRepo ??= createMemoryRepository()), ai: getAI() } };
+  return { userId: await getLocalDevUserId(), ctx: { repo: (globals.__pathpalMemoryRepo ??= createMemoryRepository()), ai: getAI() } };
 }
 
-const DEV_USER_COOKIE = "meridian_dev_uid";
+const DEV_USER_COOKIE = "pathpal_dev_uid";
 
 /** Local development without Supabase only: an anonymous id in an httpOnly cookie. */
 async function getLocalDevUserId(): Promise<string> {

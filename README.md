@@ -1,8 +1,8 @@
-# Purpose (Meridian)
+# PathPal
 
-An AI-powered life and career direction app for people who feel stuck, overwhelmed or unsure what to do next. The product is called Purpose in the specs and shown as **Meridian** in the app.
+An AI-powered life and career direction app for people who feel stuck, overwhelmed or unsure what to do next. Its AI coach is called **Meridian**.
 
-Purpose doesn't claim to find anyone's "true purpose" or perfect career. It helps people test possible directions in the real world and update their plans as they learn.
+PathPal doesn't claim to find anyone's "true purpose" or perfect career. It helps people test possible directions in the real world and update their plans as they learn.
 
 ## What it does
 
@@ -10,7 +10,7 @@ Purpose doesn't claim to find anyone's "true purpose" or perfect career. It help
 CONFUSION → CONVERSATION → UNDERSTANDING → 3 DIRECTIONS → CHOICE → EXPERIMENT → FEEDBACK → UPDATED DIRECTION → ACTION
 ```
 
-1. **Conversation.** An AI coach asks adaptive questions about your story, interests, skills, values, constraints and ambitions. It stops when it has enough to work with, not after a fixed number of questions.
+1. **Conversation.** Meridian, the AI coach, asks adaptive questions about your story, interests, skills, values, constraints and ambitions. It stops when it has enough to work with, not after a fixed number of questions.
 2. **Profile.** The conversation becomes a structured profile. It's internal app state, not a diagnosis.
 3. **Three directions.** Exactly three different hypotheses: a direct path, an adjacent one and a hybrid. Each explains why it may fit, what's still unknown, and gives a concrete first experiment.
 4. **Choice and roadmap.** Picking a direction creates a small real-world experiment with tasks, plus a roadmap: next action, this week, 30 days, 90 days and longer term. The further out, the less specific.
