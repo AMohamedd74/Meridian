@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
@@ -27,6 +28,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <Nav email={email} authEnabled={isSupabaseConfigured} />
         {children}
+        <Analytics />
       </body>
     </html>
   );
