@@ -8,4 +8,6 @@ export const maxDuration = 300;
 export const POST = route(async ({ ctx, userId, req }) => {
   const input = await parseBody(req, CheckInInputSchema);
   return submitCheckIn(ctx, userId, input);
+}, {
+  limits: ["generation", "generation_daily"],
 });

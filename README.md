@@ -59,6 +59,8 @@ cp .env.example .env.local
 | `OPENAI_REASONING_EFFORT` | No | For example `low`, for faster replies |
 | `OPENAI_CONVERSATION_TIMEOUT_MS` / `OPENAI_GENERATION_TIMEOUT_MS` | No | Default 30000 / 90000 |
 | `MOCK_AI_LATENCY_MS` / `MOCK_AI_FAILURE_RATE` | No | Mock AI only. A failure rate of `1` lets you exercise error states. |
+| `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN` | No | Error monitoring (server / browser). Without a DSN, Sentry is inert. |
+| `SENTRY_ORG` / `SENTRY_PROJECT` / `SENTRY_AUTH_TOKEN` | No | Build-time source-map upload, for readable stack traces. |
 
 `.env.local` is gitignored. Never commit keys, and never put the Supabase service-role key in this app.
 
@@ -148,10 +150,11 @@ supabase/migrations/   Database schema and RLS
 - **No endless spinners.** AI calls have timeouts, and every async screen has loading, success and error states.
 - **Nothing half-saved.** Your message is saved only once the coach replies. A check-in is saved first, so its analysis can be retried without re-entering answers.
 - **Privacy.** OpenAI requests use `store: false`, and logs never include conversation content.
+- **Rate limits.** Expensive AI routes are capped per user (60 conversation turns/hour; 12 generations/hour and 40/day). Counters live in Postgres, so the limits hold across serverless instances, and the table is only reachable through a `security definer` function that takes the user from the session. Exceeding a limit returns 429 with `Retry-After`. If the limiter itself fails, requests are allowed rather than locking users out.
+- **Error monitoring.** Unexpected server errors go through `reportError()` (`src/server/monitoring.ts`) to Sentry; browser errors are captured by `src/instrumentation-client.ts`, and failures in the root layout itself by `src/app/global-error.tsx`. Request bodies, cookies and headers are stripped before sending, so conversation text never leaves the app.
 
 ## Known limitations
 
 - The profile isn't updated after check-ins yet. Check-in learnings are stored as insights instead.
 - Protection against generating twice only works within one server process. With several instances, a double-click could generate directions twice.
-- No per-user rate limiting on AI calls.
 - Analytics events are logged to the console. No analytics provider is connected.

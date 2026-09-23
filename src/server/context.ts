@@ -10,11 +10,17 @@ import type { AIProvider } from "./ai/types";
 import { AppError } from "./errors";
 import { createMemoryRepository } from "./repo/memory";
 import { createSupabaseRepository } from "./repo/supabase";
+import {
+  createMemoryRateLimiter,
+  createSupabaseRateLimiter,
+  type RateLimiter,
+} from "./rate-limit";
 import type { Repository } from "./repo/types";
 
 export interface AppContext {
   repo: Repository;
   ai: AIService;
+  limiter: RateLimiter;
 }
 
 export interface RequestContext {
@@ -23,7 +29,12 @@ export interface RequestContext {
 }
 
 /** Process-wide singletons. Stored on globalThis so dev hot-reloads keep them. */
-const globals = globalThis as unknown as { __pathpalMemoryRepo?: Repository };
+const globals = globalThis as unknown as { __pathpalMemoryRepo?: Repository; __pathpalMemoryLimiter?: RateLimiter };
+
+/** Counts per user, since the in-memory limiter is shared by the whole process. */
+function perUser(limiter: RateLimiter, userId: string): RateLimiter {
+  return { consume: (bucket, max, windowSeconds) => limiter.consume(`${userId}:${bucket}`, max, windowSeconds) };
+}
 
 /**
  * AI_PROVIDER=openai|mock. Defaults to OpenAI when a key is present. The mock
@@ -76,13 +87,24 @@ export async function getRequestContext(): Promise<RequestContext> {
     // getUser() verifies the JWT with Supabase Auth (unlike getSession()).
     const { data, error } = await supabase.auth.getUser();
     if (error || !data.user) throw new AppError("unauthorized", "Please sign in to continue.");
-    return { userId: data.user.id, ctx: { repo: createSupabaseRepository(supabase), ai: getAI() } };
+    return {
+      userId: data.user.id,
+      ctx: { repo: createSupabaseRepository(supabase), ai: getAI(), limiter: createSupabaseRateLimiter(supabase) },
+    };
   }
 
   if (process.env.NODE_ENV === "production") {
     throw new Error("Supabase is not configured. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.");
   }
-  return { userId: await getLocalDevUserId(), ctx: { repo: (globals.__pathpalMemoryRepo ??= createMemoryRepository()), ai: getAI() } };
+  const userId = await getLocalDevUserId();
+  return {
+    userId,
+    ctx: {
+      repo: (globals.__pathpalMemoryRepo ??= createMemoryRepository()),
+      ai: getAI(),
+      limiter: perUser((globals.__pathpalMemoryLimiter ??= createMemoryRateLimiter()), userId),
+    },
+  };
 }
 
 const DEV_USER_COOKIE = "pathpal_dev_uid";

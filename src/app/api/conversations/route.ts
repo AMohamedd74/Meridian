@@ -8,4 +8,4 @@ export const maxDuration = 60;
 export const POST = route(async ({ ctx, userId, req }) => {
   const { opening } = await parseBody(req, StartConversationInputSchema);
   return startConversation(ctx, userId, opening);
-});
+}, { limits: ["conversation"] });

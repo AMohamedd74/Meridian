@@ -5,6 +5,7 @@ import { createAIService } from "../ai/service";
 import type { AIProvider } from "../ai/types";
 import type { AppContext } from "../context";
 import { AppError } from "../errors";
+import { createMemoryRateLimiter } from "../rate-limit";
 import { createMemoryRepository } from "../repo/memory";
 import { analyzeCheckIn, getDashboard, selectPath, setTaskCompleted, submitCheckIn } from "./direction";
 import { completeConversation, listCurrentPaths, sendMessage, startConversation } from "./exploration";
@@ -13,7 +14,7 @@ const USER = "11111111-1111-4111-8111-111111111111";
 const OTHER = "22222222-2222-4222-8222-222222222222";
 
 function makeCtx(provider: AIProvider = createMockProvider({ latencyMs: 0 })): AppContext {
-  return { repo: createMemoryRepository(), ai: createAIService(provider) };
+  return { repo: createMemoryRepository(), ai: createAIService(provider), limiter: createMemoryRateLimiter() };
 }
 
 async function exploreToPaths(ctx: AppContext) {
